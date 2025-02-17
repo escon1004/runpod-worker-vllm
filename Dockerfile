@@ -15,6 +15,8 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 RUN python3 -m pip install vllm==0.7.2 && \
     python3 -m pip install flashinfer -i https://flashinfer.ai/whl/cu121/torch2.3
 
+RUN python3 -m pip install bitsandbytes>=0.45.0 --no-cache-dir
+
 # Setup for Option 2: Building the Image with the Model included
 ARG MODEL_NAME=""
 ARG TOKENIZER_NAME=""
